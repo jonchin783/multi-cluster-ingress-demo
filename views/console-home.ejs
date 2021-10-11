@@ -169,7 +169,7 @@
                 <h4 class="ui top attached header" style="background-color: #f8f8f8">
                     <i class="docker icon"></i>
                     <div class="content">
-                        Container Pod Metadata Information
+                        External Multi-Cluster Gateway - Container Pod Metadata Information
                     </div>
                 </h4>
                 <div class="ui bottom attached segment">
@@ -179,7 +179,7 @@
                             <div class="ui form">
                                 <div class="field">
                                     <div class="ui eight stackable cards">
-                                        <div class="raised green fluid card">
+                                        <div class="raised red fluid card">
                                             <div class="content">
                                                 <img class="center floated tiny ui image" src="/images/pod-128.png">
                                                 <h2 class="description">
@@ -190,7 +190,7 @@
                                                 </h2>
                                             </div>
                                         </div>
-                                        <div class="raised green fluid card">
+                                        <div class="raised yellow fluid card">
                                             <div class="content">
                                                 <img class="center floated tiny ui image" src="/images/ing-128.png">
 
@@ -202,7 +202,7 @@
                                                 </h2>
                                             </div>
                                         </div>
-                                        <div class="raised green fluid card">
+                                        <div class="raised blue fluid card">
                                             <div class="content">
                                                 <img class="center floated tiny ui image" src="/images/node-128.png">
                                                 <h2 class="description">
@@ -224,7 +224,7 @@
                                                 </h2>
                                             </div>
                                         </div>
-                                        <div class="raised green fluid card">
+                                        <div class="raised red fluid card">
                                             <div class="content">
                                                 <img class="center floated tiny ui image" src="/images/ns-128.png">
 
@@ -236,7 +236,7 @@
                                                 </h2>
                                             </div>
                                         </div>
-                                        <div class="raised green fluid card">
+                                        <div class="raised yellow fluid card">
                                             <div class="content">
                                                 <img class="center floated tiny ui image" src="/images/sa-128.png">
 
@@ -250,6 +250,42 @@
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h4 class="ui top attached header" style="background-color: #f8f8f8">
+                    <i class="sitemap icon"></i>
+                    <div class="content">
+                        Internal Multi-Cluster Gateway
+                    </div>
+                </h4>
+                <div class="ui bottom attached segment">
+                    <div class="ui labeled input">
+                        <div class="ui label">
+                            http://
+                        </div>
+                        <input type="text" id="backend-url" name="backend-url" placeholder="<service-name>.<namespace-name>.svc.cluster.local">
+                        <div class="ui label">
+                            port
+                        </div>
+                        <input type="text" id="backend-port" name="backend-port" placeholder="80">
+                    </div>
+                    <button class="ui primary button" id="fetch-button">
+                        Fetch
+                    </button>
+                </div>
+                <h4 class="ui top attached header" style="background-color: #f8f8f8">
+                    <i class="microchip icon"></i>
+                    <div class="content">
+                        Backend Container Pod Metadata Information
+                    </div>
+                </h4>
+                <div class="ui bottom attached segment" id="document-content-segment">
+                    <div class="grouped fields">
+                        <div class="ui form">
+                            <div class="field">
+                                <textarea rows="15" id="json-output-content"></textarea>
                             </div>
                         </div>
                     </div>
@@ -279,13 +315,16 @@
 <script src="https://cdn.datatables.net/responsive/2.2.1/js/dataTables.responsive.min.js"></script>
 <script src="https://cdn.datatables.net/responsive/2.2.1/js/responsive.semanticui.min.js"></script>
 <script type="text/javascript" src="/js/Semantic-UI-Alert.js"></script>
-<link rel="stylesheet" type="text/css" href="/semantic/dist/semantic.min.css">
+
 <script src="/js/load-pod-metadata.js"></script>
+<!--
+<link rel="stylesheet" type="text/css" href="/semantic/dist/semantic.min.css">
 <script src="/semantic/dist/semantic.min.js"></script>
 <script src="assets/library/jquery.min.js"></script>
 <script src="../dist/components/visibility.js"></script>
 <script src="../dist/components/sidebar.js"></script>
 <script src="../dist/components/transition.js"></script>
+-->
 </body>
 
 </html>

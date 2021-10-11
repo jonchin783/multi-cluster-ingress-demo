@@ -27,5 +27,23 @@ $(document).ready(function () {
         })
         .sidebar('attach events', '#vk-header-icon-a')
         .sidebar('setting', 'transition', 'push');
+
+    $("#fetch-button").click(function (e) {
+        e.preventDefault();
+        $.ajax({
+            type: "POST",
+            url: "/api/pollBackend",
+            dataType: "json",
+            data: {
+                backend_url: $("#backend-url").val(),
+                backend_port: $("#backend-port").val()
+            },
+            success: function (result) {
+                document.getElementById("json-output-content").value = JSON.stringify(result, null, 4);
+            },
+            error: function (result) {
+            }
+        });
+    });
 });
 
