@@ -28,6 +28,13 @@ spec:
       containers:
       - image: gcr.io/jonchin-gps-argolis/mcg-demo
         imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "500m"
+          limits:
+            memory: "256Mi"
+            cpu: "750m"   
         name: mcg-demo
         env:
         - name: GCP_REGION
